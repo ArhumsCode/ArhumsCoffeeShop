@@ -1,0 +1,340 @@
+html {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+}
+h1, h2 {
+    font-size: 4rem;
+    font-weight: 300;
+}
+
+@mixin flex-box($content-type, $flex-direction: row, $align-items: stretch) {
+    display: flex;
+    justify-content: $content-type;
+    flex-direction: $flex-direction;
+    align-items: $align-items;
+ 
+
+
+}
+@mixin dimensions($height, $width) {
+    height: $height;
+    width: $width;
+
+}
+/* Nav BAR*/
+.nav {
+    background-color: #FFF0ED;
+}
+.nav__header {
+    font-size: 2rem;
+    font-weight: 300;
+    text-decoration: none;
+    color: black;
+}
+.nav__list {
+    list-style-type: none;
+}
+
+h3 {
+   font-size: 2rem;
+   font-weight: 400; 
+}
+
+.nav__item {
+    color: black;
+    text-decoration: none;
+    
+}
+/* Hero Section */
+.hero {
+    background-color: #FFF0ED;
+}
+.button {
+    font-size: 1rem;
+    font-weight: 400;
+    color: white;
+    background-color: #5BACC3;
+    padding: 15px;
+    width: 180px;
+    border: none;
+    position: relative;
+    transition: background-color 0.5s;
+    &:hover {
+        background-color: #366d7c;
+
+    }
+    &__offset {
+        @include dimensions(100% , 180px );
+        position: absolute;
+        box-sizing: border-box;
+        border: 2px solid black;
+        bottom: 5px;
+        left: 5px;
+        transition: transform 0.3s;
+        
+    }
+    &:active &__offset {
+        transform: translate(-3px, 3px);
+    }
+
+
+}
+
+
+/* Products */
+
+.product__price {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #5BACC3;
+}
+
+/*Discount Section*/
+@keyframes flashing-animation {
+    0% {
+        background-color: #393939;
+    }
+    25% {
+        background-color: #5BACC3;
+    }
+    50% {
+        background-color: #393939;
+    }
+    75% {
+        background-color: #5BACC3;
+    }
+    100% {
+        background-color: #393939;
+    }
+}
+.discount {
+    @include flex-box(center);
+
+    &__paragraph {
+        
+        width: 70%;
+        color: white;
+        font-size: 2rem;
+        font-weight: 400;
+        text-align: center;
+        background-color: #393939;
+
+        
+        
+        padding: 20px;
+        margin: 20px;
+       
+
+        &--bold {
+            font-weight: 700;
+
+        }
+    
+    }
+    &:hover &__paragraph {
+        animation: flashing-animation 2.5s ease;
+    }
+
+}
+
+
+
+/*.footer */
+.footer {
+    background-color: #FFF0ED;
+    width: 100%;
+}
+
+/* Nav Bar Extra Styling */
+.nav {
+    @include flex-box(space-between);
+    &__left {
+        @include flex-box(flex-start);
+        
+    }
+    &__item {
+        font-size: 1.5rem;
+        display: inline-block;
+        margin-right: 40px;
+        &_link {
+            text-decoration: none;
+            color: black;
+        }
+
+    }
+}
+
+
+
+/* Hero styling */
+.hero  {
+    background-color: #FFF0ED;
+    @include flex-box(space-evenly);
+ 
+    &__left {
+        text-align: left;
+        margin-top: 50px;
+    }
+    &__image {
+        margin-bottom: 5rem;
+    }
+
+
+}
+header {
+    background-color: #FFF0ED;
+
+}
+
+
+/* Product Section */
+.product {
+    background-color: #F7F7F7;
+    height: 820px;
+    &__header {
+        @include flex-box(center);
+        margin: 0 auto;
+    }
+    &__top {
+        @include flex-box(center);
+        
+        height: 300px;
+    }
+    &__card_container {
+        margin: 5rem 0;
+        @include flex-box(space-evenly);
+    }
+    &__card {
+        @include flex-box(space-between, column);
+        @include dimensions(440px,330px );
+        margin-bottom: 20px;
+        border-radius: 15px;
+        box-shadow:  rgba(0, 0, 0, 0.25) 0 5px 9px 1px;
+        overflow: hidden;
+    }
+    &__name {
+        text-align: center;
+    }
+    &__price {
+        text-align: center;
+    }
+    &__button_container {
+        @include flex-box(center);
+       
+        width: 100%;
+        
+        margin: 5rem 0;
+    }
+    &__bottom {
+        margin-top: 30px;
+        @include flex-box(space-around, $align-items: center);
+        
+        background-color: #FFF0ED;
+      
+    }
+    &__amount {
+        color: #909090;
+    }
+}
+
+
+
+
+
+
+
+
+/* .footer Adjustments */
+.footer {
+    @include flex-box(space-evenly);
+    position: relative;
+    &__logo_one {
+        position: absolute;
+        width: 60px;
+        top: 0;
+        left: 0;
+        opacity: 0.2;
+    }
+    &__logo_two {
+        position: absolute;
+        width: 60px;
+        left: 95%;
+        bottom: 5%;
+        opacity: 0.2;
+    }
+}
+
+/* Card Adjustments */
+@keyframes rotate360 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+/* Motto Section */
+.motto {
+    margin: 50px;
+    @include flex-box(space-around);
+    &__header {
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    &__drawings {
+        width: 350px;
+        @include flex-box(space-between);
+        margin: 2rem;
+        * {
+            width: 50px;
+        }
+    }
+    &__left {
+        width: 500px;
+        @include flex-box(space-between, column, flex-start);
+        
+    }
+    
+    &__right {
+        @include flex-box(center, $align-items: center);
+        @include dimensions(400px, 400px );
+        background-image: url('../assets/images/coldbrewbackground.png');
+        background-size: contain;
+        position: relative;
+        &--offset {
+            @include dimensions(100%, 100%);
+            box-sizing: border-box;
+            border: 5px solid #5BACC3;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+        }
+        &__image {
+            height: 280px;
+            
+
+        }
+        &:hover &__image {
+           animation: rotate360 2s linear infinite;
+        }
+        
+
+
+        }
+
+    }
+
+        
+        
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,154 @@
+/*General Styling*/
+html {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px
+}
+h1, h2 {
+    font-size: 5rem;
+    font-weight: 300;
+
+
+}
+
+/*Nav Bar Styling*/
+.nav {
+    background-color: #FFF0ED;
+}
+
+.nav__header {
+    font-size: 3rem;
+    font-weight: 300;
+    text-decoration: none;
+    color: black;
+}
+.nav__list {
+    list-style-type: none;
+}
+
+h3 {
+   font-size: 2rem;
+   font-weight: 400; 
+}
+
+
+
+.menu__list {
+    list-style-type: none;
+    text-align: center;
+}
+.hero__top_header {
+    width: 20rem;
+    height: 15rem;
+    background-color: #393939;
+    color: white;
+
+
+
+}
+/*Hero Styling */
+.hero__list * {
+    color: white;
+    width: 100%;
+    background-color: #393939;
+    list-style: none;
+}
+.hero__genre_link {
+    color: white;
+    text-decoration: none;   
+}
+.hero__top{
+    background-image: url("../assets/images/coffee-circle.jpg");
+    background-size: cover;
+    width: 100%; 
+    height:36rem;
+}
+
+/* Actual Menu itself styling */
+.menu__section {
+    background-color: #FFF0ED ;
+    text-align: center;
+}
+
+.menu__item_description {
+    font-weight: 400;
+    font-size: 1.1rem;
+    font-style: italic;
+    
+}
+
+/* Nav Bar Styling */
+.nav__logo {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.nav__header {
+    display: inline-block;
+    
+    
+    
+}
+.nav__list {
+    display: inline-block;
+    
+
+}
+.nav__item {
+    font-size: 1.5rem;
+    display: inline-block;
+    margin-right: 40px;
+
+}
+.nav__item_link {
+    text-decoration: none;
+    color: black;
+}
+
+/*Menu Styling */
+
+.hero__list {
+    display: flex;
+    justify-content: center;
+    background-color: #393939;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+}
+.hero__top_header { 
+    text-align: center;
+    margin: auto;
+}
+
+
+
+.hero__genre {
+    
+    text-decoration: none;
+    display: inline-block;
+    width: fit-content;
+    padding: 20px;
+    margin: 20px 0px 20px 0px;
+    border-left: #5BACC3 4px solid;
+
+
+}
+/*Styling Menu Items and Descriptions*/
+.menu__section {
+    margin-top: 0;
+}
+.menu__section.white {
+    background-color: white;
+}
+.menu__header {
+    margin-top: 0;
+}
+.menu__item_description {
+
+    margin: 0 auto;
+    width: 40%;
+}
+.menu__item_price {
+    font-size: 1.5rem;
+    color:#5BACC3;
+}
